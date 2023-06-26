@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    ## Allow access from Development machine
+    ports:
+      - "0.0.0.0:5429:5432"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: telegrammer_database
+      POSTGRES_USER: telegrammer_database_user
+      POSTGRES_PASSWORD: telegrammer_database_password
+      TZ: 'Asia/Tehran'
+      PGTZ: 'Asia/Tehran'
+      ## To go to psql cli, run `docker compose exec db bash` and
+      ## run `psql --user notifier_db_user -d notifier` (\l - \q - \h will help you)

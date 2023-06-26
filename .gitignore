@@ -1,0 +1,53 @@
+# IntelliJ project files
+.idea/
+*.iml
+out
+gen
+!.gitkeep
+
+
+# macOS template
+*.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Django Project Files
+*.sqlite3
+*.sqlite3-journal
+*.session
+*.session-journal
+__pycache__/
+.pyc
+
+## static and media directory
+media/
+statics/
+db/
+
+# redis fils
+*.rdb
+
+# Zip files
+*.tar.gz
+*.zip
+*.mo
+
+.sass-cache
+
+_logs/
+/staticfiles/
+
+# Celery Beat generated files
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
