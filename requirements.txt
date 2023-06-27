@@ -15,3 +15,6 @@ celery>=5.3.0
 
 # Telegram
 python-telegram-bot>=20.3
+
+#Django Rest Framework
+djangorestframework>=3.14.0

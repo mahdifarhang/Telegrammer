@@ -17,7 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework.authtoken import views as drf_auth_views
+
 urlpatterns = [
+	# Admin URLs
 	path('admin/', admin.site.urls),
+	# Third Party URLs
+	path('obtain-auth-token/', drf_auth_views.ObtainAuthToken.as_view()),
+	# Apps URLs
 	path('core/', include('core.urls')),
 ]

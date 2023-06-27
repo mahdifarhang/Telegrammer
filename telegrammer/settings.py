@@ -40,6 +40,12 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+
+	# Third Party Packages
+	'rest_framework',
+	'rest_framework.authtoken',
+
+	# Project Apps
 	'core',
 ]
 
@@ -117,6 +123,17 @@ STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+REST_FRAMEWORK = {
+	'DEFAULT_PERMISSION_CLASSES': [
+		'rest_framework.permissions.AllowAny',
+	],
+	'DEFAULT_AUTHENTICATION_CLASSES': [
+		'rest_framework.authentication.TokenAuthentication'
+	],
+	'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+	'PAGE_SIZE': 50,
+}
 
 # Media files
 MEDIA_URL = "/media/"
