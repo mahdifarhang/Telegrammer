@@ -126,7 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 REST_FRAMEWORK = {
 	'DEFAULT_PERMISSION_CLASSES': [
-		'rest_framework.permissions.AllowAny',
+		'core.permissions.IsSuperUser',
 	],
 	'DEFAULT_AUTHENTICATION_CLASSES': [
 		'rest_framework.authentication.TokenAuthentication'
