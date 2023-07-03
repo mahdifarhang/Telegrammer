@@ -1,14 +1,12 @@
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.generics import RetrieveAPIView
+
+from core.serializers import UserSerializer
 
 
-class PingView(APIView):
+class GetSelfUserView(RetrieveAPIView):
     permission_classes = [IsAuthenticated]
+    serializer_class = UserSerializer
 
-    def get(self, request, format=None):
-        content = {
-            'user': str(request.user),
-            'auth': str(request.auth),
-        }
-        return Response(content)
+    def get_object(self):
+        return self.request.user
