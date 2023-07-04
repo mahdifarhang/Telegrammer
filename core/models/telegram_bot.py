@@ -19,7 +19,8 @@ class TelegramBotManager(ShallowDeleteModelManager):
 class TelegramBot(ShallowDeleteModel):
 	name = models.CharField(max_length=50, null=False)
 	token = models.CharField(max_length=70, unique=True)
-	bot_id = models.CharField(max_length=60, unique=True)
+	username = models.CharField(max_length=60, unique=True)
+	bot_id = models.CharField(max_length=64, unique=True)
 	projects = models.ManyToManyField(
 		to='core.Project',
 		through='core.TelegramBotProjectAccess',
