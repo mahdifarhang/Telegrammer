@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 	# Project Apps
 	'core',
+	'sender',
 ]
 
 MIDDLEWARE = [

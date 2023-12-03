@@ -16,4 +16,4 @@ services:
       TZ: 'Asia/Tehran'
       PGTZ: 'Asia/Tehran'
       ## To go to psql cli, run `docker compose exec db bash` and
-      ## run `psql --user notifier_db_user -d notifier` (\l - \q - \h will help you)
+      ## run `psql --user telegrammer_database_user -d telegrammer_database` (\l - \q - \h will help you)

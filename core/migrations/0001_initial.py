@@ -4,6 +4,7 @@ import core.models.user
 from django.conf import settings
 import django.contrib.auth.validators
 from django.db import migrations, models
+import django.db.models.deletion
 import django.utils.timezone
 
 
@@ -66,10 +67,6 @@ class Migration(migrations.Migration):
                 'base_manager_name': 'objects',
                 'default_manager_name': 'objects',
             },
-            managers=[
-                ('objects', core.models.project.ProjectManager()),
-                ('all_objects', core.models.project.ProjectAllManager()),
-            ],
         ),
         migrations.CreateModel(
             name='TelegramBot',
@@ -83,18 +80,13 @@ class Migration(migrations.Migration):
                 ('username', models.CharField(max_length=60, unique=True)),
                 ('bot_id', models.CharField(max_length=64, unique=True)),
                 ('created_by', models.ForeignKey(blank=True, db_index=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', related_query_name='+', to=settings.AUTH_USER_MODEL)),
-                ('updated_by', models.ForeignKey(blank=True, db_index=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', related_query_name='+', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Telegram Bot',
-                'verbose_name_plural': 'Telegram Bot',
+                'verbose_name_plural': 'Telegram Bots',
                 'base_manager_name': 'objects',
                 'default_manager_name': 'objects',
             },
-            managers=[
-                ('objects', core.models.telegram_bot.TelegramBotManager()),
-                ('all_objects', core.models.telegram_bot.TelegramBotAllManager()),
-            ],
         ),
         migrations.CreateModel(
             name='UserProject',
@@ -126,6 +118,11 @@ class Migration(migrations.Migration):
             model_name='telegrambot',
             name='projects',
             field=models.ManyToManyField(blank=True, related_name='telegram_bots', related_query_name='telegram_bot', through='core.TelegramBotProjectAccess', to='core.project'),
+        ),
+        migrations.AddField(
+            model_name='telegrambot',
+            name='updated_by',
+            field=models.ForeignKey(blank=True, db_index=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', related_query_name='+', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='project',

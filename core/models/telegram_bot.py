@@ -43,7 +43,7 @@ class TelegramBot(ShallowDeleteModel):
 
 	class Meta:
 		verbose_name = 'Telegram Bot'
-		verbose_name_plural = 'Telegram Bot'
+		verbose_name_plural = 'Telegram Bots'
 		default_manager_name = 'objects'
 		base_manager_name = 'objects'
 

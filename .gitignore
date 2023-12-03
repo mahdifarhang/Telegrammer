@@ -5,6 +5,8 @@ out
 gen
 !.gitkeep
 
+# VS Code
+.vscode/
 
 # macOS template
 *.DS_Store
