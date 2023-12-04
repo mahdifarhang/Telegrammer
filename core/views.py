@@ -1,12 +1,12 @@
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 
+from core.permissions import IsActiveAuthenticated
 from core.models import TelegramBot
 from core.serializers import UserSerializer, ProjectSerializer, TelegramBotSerializer
 
 
 class GetSelfUserView(RetrieveAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsActiveAuthenticated]
     serializer_class = UserSerializer
 
     def get_object(self):
@@ -14,7 +14,7 @@ class GetSelfUserView(RetrieveAPIView):
 
 
 class GetUserProjects(ListAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsActiveAuthenticated]
     serializer_class = ProjectSerializer
 
     def get_queryset(self):
@@ -22,7 +22,7 @@ class GetUserProjects(ListAPIView):
 
 
 class GetUserTelegramBots(ListAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsActiveAuthenticated]
     serializer_class = TelegramBotSerializer
 
     def get_queryset(self):
