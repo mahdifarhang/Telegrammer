@@ -11,11 +11,7 @@ class SendMessage(CreateAPIView):
     serializer_class = MessageSerializer
 
     def perform_create(self, serializer):
-        extra_content = {
-            "status": Message.StatusChoices.SENDING,
-        }
-        serializer.save(**extra_content)
-        # TODO: Start sending telegram message task
+        Message.create_message(serializer)
 
 
 class GetMessage(RetrieveAPIView):

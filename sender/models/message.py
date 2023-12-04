@@ -8,6 +8,8 @@ from core.models.mixins import (
 )
 from core.models import TelegramBot, Project
 
+from sender.tasks import send_telegram_message
+
 
 class MessageAllManager(ShallowDeleteModelAllManager):
     pass
@@ -75,3 +77,12 @@ class Message(ShallowDeleteModel):
         verbose_name_plural = 'Messages'
         default_manager_name = 'objects'
         base_manager_name = 'objects'
+
+    @classmethod
+    def create_message(cls, serializer):
+        extra_content = {
+            "status": Message.StatusChoices.SENDING,
+        }
+        object = serializer.save(**extra_content)
+        send_telegram_message(object) # TODO: Run this in a celery task
+
