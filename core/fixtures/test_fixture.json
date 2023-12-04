@@ -1,0 +1,248 @@
+[
+    {
+        "model": "core.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$WXDXznivKKrEsiErruY9R6$IBwLkqOEU9iHBLP3jOGhArqahzKxyl9EYeusMS6nqE4=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-12-04T15:57:27.034Z",
+            "created_at": "2023-12-04T15:57:27.034Z",
+            "updated_at": "2023-12-04T15:57:27.207Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$O7WzQSDForXABoT4p8AXSI$KFR+N3W8HqMMsZ9W4BvJG2CSxHGzG1qMo1Xmv5vn4HU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "mahdi",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-12-04T15:57:39.430Z",
+            "created_at": "2023-12-04T15:57:39.430Z",
+            "updated_at": "2023-12-04T15:57:39.598Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$pl7EAA49INGcyZLDBOCDRQ$fQVljoj7m+DqozEqVtA+6Ei1MAkYtCmDmjSaMqE6cdQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "rahnama",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-12-04T15:57:44.560Z",
+            "created_at": "2023-12-04T15:57:44.560Z",
+            "updated_at": "2023-12-04T15:57:44.727Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.project",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-12-04T16:01:36.364Z",
+            "updated_at": "2023-12-04T16:01:36.365Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Norbitrage"
+        }
+    },
+    {
+        "model": "core.project",
+        "pk": 2,
+        "fields": {
+            "created_at": "2023-12-04T16:02:00.911Z",
+            "updated_at": "2023-12-04T16:02:00.911Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Market Change Announcer"
+        }
+    },
+    {
+        "model": "core.project",
+        "pk": 3,
+        "fields": {
+            "created_at": "2023-12-04T16:02:08.027Z",
+            "updated_at": "2023-12-04T16:02:08.028Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Navaye Yas"
+        }
+    },
+    {
+        "model": "core.userproject",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-12-04T16:19:37.048Z",
+            "user": 2,
+            "project": 1
+        }
+    },
+    {
+        "model": "core.userproject",
+        "pk": 2,
+        "fields": {
+            "created_at": "2023-12-04T16:19:39.442Z",
+            "user": 2,
+            "project": 2
+        }
+    },
+    {
+        "model": "core.userproject",
+        "pk": 3,
+        "fields": {
+            "created_at": "2023-12-04T16:19:40.952Z",
+            "user": 2,
+            "project": 3
+        }
+    },
+    {
+        "model": "core.userproject",
+        "pk": 4,
+        "fields": {
+            "created_at": "2023-12-04T16:20:01.383Z",
+            "user": 3,
+            "project": 3
+        }
+    },
+    {
+        "model": "core.telegrambot",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-12-04T16:05:32.300Z",
+            "updated_at": "2023-12-04T16:05:32.301Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Norbitrage",
+            "token": "6174141935:AAECr4_40TIAecT2IljIRCTw_R1aI85vW-I",
+            "username": "norbitrage_bot",
+            "bot_id": ""
+        }
+    },
+    {
+        "model": "core.telegrambot",
+        "pk": 4,
+        "fields": {
+            "created_at": "2023-12-04T16:08:23.976Z",
+            "updated_at": "2023-12-04T16:08:23.977Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Freqtrader",
+            "token": "5301605396:AAGcg-2BMM_BTRVkJt5SOiEIMyEdxIZqrWk",
+            "username": "mahdi_freqtrade_bot",
+            "bot_id": "76854321"
+        }
+    },
+    {
+        "model": "core.telegrambot",
+        "pk": 5,
+        "fields": {
+            "created_at": "2023-12-04T16:10:39.063Z",
+            "updated_at": "2023-12-04T16:10:39.064Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Notifier",
+            "token": "SomeToken",
+            "username": "mahdi_notifier_bot",
+            "bot_id": "685419684"
+        }
+    },
+    {
+        "model": "core.telegrambot",
+        "pk": 6,
+        "fields": {
+            "created_at": "2023-12-04T16:11:20.267Z",
+            "updated_at": "2023-12-04T16:11:20.267Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "name": "Instagrammer",
+            "token": "5332620606:AAGE6FN4MT4i8b60oPxZBhGzuzs8JxcjXEI",
+            "username": "instagraming_bot",
+            "bot_id": "3574417543"
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-12-04T16:15:26.163Z",
+            "project": 1,
+            "telegram_bot": 5
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 2,
+        "fields": {
+            "created_at": "2023-12-04T16:16:13.187Z",
+            "project": 1,
+            "telegram_bot": 1
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 3,
+        "fields": {
+            "created_at": "2023-12-04T16:16:37.470Z",
+            "project": 2,
+            "telegram_bot": 5
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 4,
+        "fields": {
+            "created_at": "2023-12-04T16:16:40.652Z",
+            "project": 3,
+            "telegram_bot": 5
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 5,
+        "fields": {
+            "created_at": "2023-12-04T16:17:01.148Z",
+            "project": 1,
+            "telegram_bot": 4
+        }
+    }
+]
