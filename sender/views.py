@@ -1,30 +1,34 @@
-from rest_framework.generics import GenericAPIView
-from rest_framework import status
-from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView, RetrieveAPIView
 
 from core.permissions import IsActiveAuthenticated
 from sender.serializers import MessageSerializer
 from sender.models import Message
+from core.models import Project
 
 
-class SendMessage(GenericAPIView):
+class SendMessage(CreateAPIView):
     permission_classes = [IsActiveAuthenticated]
     serializer_class = MessageSerializer
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        response = self.send_message(serializer)
-        return Response(data=response, status=status.HTTP_200_OK)
-
-    def send_message(serializer):
+    def perform_create(self, serializer):
         extra_content = {
             "status": Message.StatusChoices.SENDING,
         }
-        serializer.save(extra_content)
+        serializer.save(**extra_content)
         # TODO: Start sending telegram message task
 
-class CheckSentMessage():
+class GetMessage(RetrieveAPIView):
+    permission_classes = [IsActiveAuthenticated]
+    serializer_class = MessageSerializer
+
+    def get_queryset(self):
+        user_project_ids = self.request.user.projects.all().values_list('id', flat=True)
+        all_project_ids = Project.objects.all().values_list('id', flat=True) # TODO: Remove
+        return Message.objects.filter(project_id__in=user_project_ids)
+
+
+class CheckDoneTaskOrSentMessage():
     pass
     # TODO Implement
     # Important: Two things could happen, return the status of the message object, or check if the task for sending this message is being done or not, and check if the task is okay!
+    

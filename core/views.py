@@ -26,4 +26,6 @@ class GetUserTelegramBots(ListAPIView):
     serializer_class = TelegramBotSerializer
 
     def get_queryset(self):
-        return TelegramBot.objects.filter(projects__users=self.request.user).order_by('-created_at')
+        return TelegramBot.objects.filter(
+            projects__users=self.request.user
+        ).distinct('id').order_by('-id')

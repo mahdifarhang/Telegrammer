@@ -39,10 +39,10 @@ class Message(ShallowDeleteModel):
         max_length=64,
         null=False,
     )
-    message_id = models.CharField(
+    telegram_message_id = models.CharField(
         max_length=64,
         unique=True,
-        null=False,
+        null=True,
     )
     sender_bot = models.ForeignKey(
         to=TelegramBot,
