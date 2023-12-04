@@ -26,4 +26,5 @@ urlpatterns = [
 	path('obtain-auth-token/', drf_auth_views.ObtainAuthToken.as_view()),
 	# Apps URLs
 	path('core/', include('core.urls')),
+    path('sender/', include('sender.urls')),
 ]
