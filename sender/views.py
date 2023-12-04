@@ -17,13 +17,13 @@ class SendMessage(CreateAPIView):
         serializer.save(**extra_content)
         # TODO: Start sending telegram message task
 
+
 class GetMessage(RetrieveAPIView):
     permission_classes = [IsActiveAuthenticated]
     serializer_class = MessageSerializer
 
     def get_queryset(self):
         user_project_ids = self.request.user.projects.all().values_list('id', flat=True)
-        all_project_ids = Project.objects.all().values_list('id', flat=True) # TODO: Remove
         return Message.objects.filter(project_id__in=user_project_ids)
 
 

@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 from sender.models import Message
 
@@ -21,14 +22,23 @@ class MessageSerializer(serializers.ModelSerializer):
             'sent_at',
             'telegram_message_id',
         ]
-        # TODO: Test if fields are given okay. definitely need more validations,
-        # meaning we have to check if the _id is correct, and check for read_only, write_only attributes.
 
+    def save(self, **kwargs):
+        return super().save(**kwargs)
+    
+    def validate(self, attrs):
+        result = super().validate(attrs)
+        if not result.get('sender_bot') in result.get('project').telegram_bots.all():
+            raise ValidationError(detail=f"Invalid pk '{result.get('sender_bot').id}' for sender_bot."
+                                  " Object does not exist!")
 
-    def validate_project(self, data):
-        return data
-        # TODO: Implement. Check if the user is allowed to use this project
-
-    def validate_sender_bot(self, data):
-        # TODO: Implement. Check if the user is allowed to use this project
-        return data
+        # Note: Could have returned 404 instead of the default which is 400,
+        # but it seems a bit weird to return a 404 on a post.
+        return result
+    
+    def validate_project(self, value):
+        user = self.context.get('request').user
+        if not value in user.projects.all():
+            raise ValidationError(detail=f"Invalid pk '{value.id}' for project."
+                                  " Object does not exist!")
+        return value

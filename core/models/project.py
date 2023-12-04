@@ -44,6 +44,8 @@ class Project(ShallowDeleteModel):
 		default_manager_name = 'objects'
 		base_manager_name = 'objects'
 
+# Todo: MessageTemplate for a Project could be added as a feature.
+
 
 class UserProject(BaseDefaultFields):
 	user = models.ForeignKey(
