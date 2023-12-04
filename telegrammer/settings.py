@@ -157,6 +157,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 	}
 # }
 
+# Sending Telegram Request:
+TELEGRAM_BOT_API_BASE_URL = "https://api.telegram.org"
+
 if DEBUG == True:
 	from .development import *
 else:
