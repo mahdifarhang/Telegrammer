@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+import django.contrib.admin
 
 
 class BaseDefaultFields(models.Model):
@@ -93,3 +94,17 @@ class ShallowDeleteModel(DefaultFields):
 
 	class Meta:
 		abstract = True
+
+
+class ShallowDeleteAdminModel(django.contrib.admin.ModelAdmin):
+    def get_queryset(self, request):
+        """
+		Copied from parent class, changing used manager.
+		There was no way to do it with overriding and calling super()
+        """
+        qs = self.model.all_objects.get_queryset()
+        # TODO: this should be handled by some parameter to the ChangeList.
+        ordering = self.get_ordering(request)
+        if ordering:
+            qs = qs.order_by(*ordering)
+        return qs
