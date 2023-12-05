@@ -9,7 +9,8 @@ def send_telegram_message(message):
     }
     url_token = message.sender_bot.token
     response = requester(
-        endpoint=f"./bot{url_token}/sendMessage", # Important to have the `./` at the beginning
+        # Important to have the `./` at the beginning (Preventing bug with urljoin)
+        endpoint=f"./bot{url_token}/sendMessage",
         method="POST",
         **{"data": data}
     )
