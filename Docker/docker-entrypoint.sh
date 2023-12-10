@@ -28,7 +28,7 @@ if [ "x$DJANGO_MANAGEPY_MIGRATE" = 'xon' ]; then
 
 	echo -e "\n\n* ********************************************** *"
 	echo -e "* \t\t\t\t\t *"
-	echo -e "* \t\tRUNNING MIGRATIONS\t\t *"
+	echo -e "* \t\tRUNNING MIGRATIONS\t *"
 	echo -e "* \t\t\t\t\t *"
 	echo -e "* ********************************************** *"
 
@@ -38,7 +38,7 @@ fi
 if [ "x$DJANGO_MANAGEPY_COMPILEMESSAGES" = 'xon' ]; then
 	echo -e "\n\n* ********************************************** *"
 	echo -e "* \t\t\t\t\t *"
-	echo -e "* \t\tCOMPILING MESSAGES\t\t *"
+	echo -e "* \t\tCOMPILING MESSAGES\t *"
 	echo -e "* \t\t\t\t\t *"
 	echo -e "* ********************************************** *"
 
@@ -49,7 +49,7 @@ fi
 if [ "x$DJANGO_MANAGEPY_COLLECTSTATIC" = 'xon' ]; then
 	echo -e "\n\n* ********************************************** *"
 	echo -e "* \t\t\t\t\t *"
-	echo -e "* \t\tCOLLECTING STATICS\t\t *"
+	echo -e "* \t\tCOLLECTING STATICS\t *"
 	echo -e "* \t\t\t\t\t *"
 	echo -e "* ********************************************** *"
 
@@ -59,7 +59,7 @@ fi
 
 echo -e "\n\n* ********************************************** *"
 echo -e "* \t\t\t\t\t *"
-echo -e "* \t\tConfig\t\t *"
+echo -e "* \t\t\tConfig\t\t *"
 echo -e "* \t\t\t\t\t *"
 echo -e "* ********************************************** *\n"
 #printenv | grep UWSGI_
