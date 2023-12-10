@@ -1,11 +1,10 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 # Keeps the python output streams are sent to the terminal
 # Check https://stackoverflow.com/a/59812588/7280058
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update && apt-get install -y locales iputils-ping net-tools gettext libjpeg-dev libpng-dev zlib1g-dev build-essential cron \
-    libtiff5-dev libtiff5 \
+RUN apt-get update && apt-get install -y locales iputils-ping net-tools gettext build-essential cron \
     && locale-gen en_US.UTF-8 \
     && pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org --no-cache-dir -U pip \
     && pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org --no-cache-dir uwsgi psycopg2-binary \
@@ -17,7 +16,7 @@ WORKDIR /code
 ADD ./Docker/docker-entrypoint.sh /entrypoint.sh
 
 ## Install requirements
-ADD requirements.txt /code/requirements.txt
+ADD ./requirements.txt /code/requirements.txt
 RUN pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org --no-cache-dir -r requirements.txt
 ## Add code to container
 ADD . /code

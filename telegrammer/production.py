@@ -10,13 +10,12 @@ ALLOWED_HOSTS += ['*']
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'telegrammer_database',
-		'USER': 'telegrammer_database_user',
+		'NAME': os.getenv('DJANGO_DB_NAME', 'db'),
+		'USER': os.getenv('DJANGO_DB_USER', 'user'),
 		# should be same as uWSGI user so we can use PostgreSQL local peer authentication mod (not in docker)
-		'PASSWORD': 'telegrammer_database_password',
+		'PASSWORD': os.getenv('DJANGO_DB_PASSWD', 'pass'),
 		# PASSWORD is not required in PostgreSQL local peer mod, but required while using docker
-		'HOST': '127.0.0.1',  # make sure this point to correct database host in docker
-		'PORT': 5429,
+		'HOST': os.getenv('DJANGO_DB_HOST', 'db'),  # make sure this point to correct database host in docker
 		'CONN_MAX_AGE': 600,  # persistent connection to improves performance
 	}
 }

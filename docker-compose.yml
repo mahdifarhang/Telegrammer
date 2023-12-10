@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: Docker/Dockerfile
+      dockerfile: Dockerfile
     restart: no
     environment:
       DJANGO_ENV: production
@@ -11,7 +11,7 @@ services:
       DJANGO_DB_HOST: db
       DJANGO_DB_NAME: telegrammer_database
       DJANGO_DB_USER: telegrammer_database_user
-      DJANGO_DB_PASSWD: telegrammer_database_pass
+      DJANGO_DB_PASSWD: telegrammer_database_password
       
       # entry point settings
       PIP_INSTALL_REQUIREMENTS: 'off'
@@ -34,7 +34,6 @@ services:
       UWSGI_BUFFER_SIZE: 8192
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /root/code/scarfbank-automation/:/code/:Z
       - ./staticfiles/:/code/staticfiles/:Z
       - ./media/:/code/media/:Z
     ports:
@@ -47,7 +46,7 @@ services:
     restart: unless-stopped
     ## Allow access from Development machine
     ports:
-      - "0.0.0.0:5429:5432"
+      - "0.0.0.0:5432:5432"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./db:/var/lib/postgresql/data
