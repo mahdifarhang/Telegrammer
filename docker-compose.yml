@@ -1,5 +1,47 @@
 version: '3.8'
 services:
+  web:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile
+    restart: no
+    environment:
+      DJANGO_ENV: production
+      DJANGO_SECRET_KEY: 'sp7x+9d6=i0)g5^ersgh&x5!t1*!f=6xypc$t5$(%d+n%wlz=s'
+      DJANGO_DB_HOST: db
+      DJANGO_DB_NAME: telegrammer_database
+      DJANGO_DB_USER: telegrammer_database_user
+      DJANGO_DB_PASSWD: telegrammer_database_pass
+      
+      # entry point settings
+      PIP_INSTALL_REQUIREMENTS: 'off'
+      DJANGO_MANAGEPY_MIGRATE: 'on'
+      DJANGO_MANAGEPY_COLLECTSTATIC: 'on'
+
+      # Setup uWSGI with environment variable instead of config file:
+      UWSGI_UID: 987
+      UWSGI_GID: 982
+      UWSGI_CHMOD_SOCKET: 664
+      UWSGI_SOCKET: :8000
+      UWSGI_MASTER: 1
+      UWSGI_VACUUM: 1
+      UWSGI_CHDIR: /code
+      UWSGI_MODULE: telegrammer.wsgi
+      UWSGI_WORKERS: 2
+      UWSGI_THREADS: 5
+      UWSGI_LOG_5XX: 1
+      UWSGI_DISABLE_LOGGING: 1
+      UWSGI_BUFFER_SIZE: 8192
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /root/code/scarfbank-automation/:/code/:Z
+      - ./staticfiles/:/code/staticfiles/:Z
+      - ./media/:/code/media/:Z
+    ports:
+      - "0.0.0.0:8000:8000"
+    depends_on:
+      - db
+
   db:
     image: postgres
     restart: unless-stopped
