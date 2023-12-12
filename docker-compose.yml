@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Docker/Dockerfile
     restart: no
+    # entrypoint: python3 manage.py runserver 0.0.0.0:8000
     environment:
       DJANGO_ENV: production
       DJANGO_SECRET_KEY: 'sp7x+9d6=i0)g5^ersgh&x5!t1*!f=6xypc$t5$(%d+n%wlz=s'
@@ -22,6 +23,7 @@ services:
       UWSGI_UID: 987
       UWSGI_GID: 982
       UWSGI_CHMOD_SOCKET: 664
+      # UWSGI_HTTP: :8000
       UWSGI_SOCKET: :8000
       UWSGI_MASTER: 1
       UWSGI_VACUUM: 1

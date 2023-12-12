@@ -19,3 +19,6 @@ DATABASES = {
 		'CONN_MAX_AGE': 600,  # persistent connection to improves performance
 	}
 }
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True

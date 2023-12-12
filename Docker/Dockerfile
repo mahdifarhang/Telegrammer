@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y locales iputils-ping net-tools gettext 
     && pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org --no-cache-dir -U pip \
     && pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org --no-cache-dir uwsgi psycopg2-binary \
  && apt-get clean
+ # Could instgall gunicorn here, next to uwsgi
 
 RUN mkdir /code
 WORKDIR /code
