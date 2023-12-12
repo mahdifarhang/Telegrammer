@@ -44,7 +44,7 @@ services:
       - db
 
   db:
-    image: postgres
+    image: postgres:14.10-alpine
     restart: unless-stopped
     ## Allow access from Development machine
     ports:
