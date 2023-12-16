@@ -42,6 +42,7 @@ services:
       - "0.0.0.0:8000:8000"
     depends_on:
       - db
+      - redis
 
   db:
     image: postgres:14.10-alpine
@@ -60,8 +61,33 @@ services:
       PGTZ: 'Asia/Tehran'
       ## To go to psql cli, run `docker compose exec db bash` and
       ## run `psql --user telegrammer_database_user -d telegrammer_database` (\l - \q - \h will help you)
+
   redis:
     image: redis
     restart: no
     ports:
      - "0.0.0.0:6375:6379"
+
+  celery:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile
+    restart: no
+    entrypoint: python -m celery -A telegrammer worker -l info
+    environment:
+      SENTRY_ENVIRONMENT: celery-production
+      DJANGO_ENV: production
+      DJANGO_SECRET_KEY: 'sp7x+9d6=i0)g5^ersgh&x5!t1*!f=6xypc$t5$(%d+n%wlz=s'
+      DJANGO_DB_HOST: db
+      DJANGO_DB_NAME: telegrammer_database
+      DJANGO_DB_USER: telegrammer_database_user
+      DJANGO_DB_PASSWD: telegrammer_database_password
+      DJANGO_LOG_LEVEL: INFO
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./staticfiles/:/code/staticfiles/:Z
+      - ./media/:/code/media/:Z
+    depends_on:
+      - web
+      - redis
+      - db
