@@ -85,5 +85,5 @@ class Message(ShallowDeleteModel):
             "status": Message.StatusChoices.SENDING,
         }
         object = serializer.save(**extra_content)
-        send_telegram_message(object) # TODO: Run this in a celery task
+        send_telegram_message.delay(object.id)
 
