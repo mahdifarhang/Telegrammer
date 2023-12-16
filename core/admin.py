@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from core.models.mixins import ShallowDeleteAdminModel
 
 from core.models import (
@@ -9,8 +10,14 @@ from core.models import (
     UserProject,
 )
 
+class TelegramBotProjectAccessInline(admin.TabularInline):
+    model = TelegramBotProjectAccess
+
+class UserProjectInline(admin.TabularInline):
+    model = UserProject
+
 @admin.register(User)
-class UserAdmin(ShallowDeleteAdminModel):
+class CustomUserAdmin(UserAdmin, ShallowDeleteAdminModel):
     list_display = [
         'id',
         'username',
@@ -20,6 +27,7 @@ class UserAdmin(ShallowDeleteAdminModel):
         'first_name',
         'last_name',
     ]
+    inlines = [UserProjectInline]
 
 
 @admin.register(Project)
@@ -28,6 +36,7 @@ class ProjectAdmin(ShallowDeleteAdminModel):
         'id',
         'name',
     ]
+    inlines = [UserProjectInline, TelegramBotProjectAccessInline]
 
 
 @admin.register(TelegramBot)
@@ -39,3 +48,4 @@ class TelegramBotAdmin(ShallowDeleteAdminModel):
         'bot_id',
         'token',
     ]
+    inlines = [TelegramBotProjectAccessInline, ]
