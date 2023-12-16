@@ -11,8 +11,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('core', '0001_initial'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -29,6 +29,7 @@ class Migration(migrations.Migration):
                 ('receiver_id', models.CharField(max_length=64)),
                 ('chat_id', models.CharField(max_length=64)),
                 ('telegram_message_id', models.CharField(max_length=64, null=True, unique=True)),
+                ('error', models.TextField(null=True)),
                 ('created_by', models.ForeignKey(blank=True, db_index=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', related_query_name='+', to=settings.AUTH_USER_MODEL)),
                 ('project', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='messages', related_query_name='message', to='core.project')),
                 ('sender_bot', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='messages', related_query_name='message', to='core.telegrambot')),

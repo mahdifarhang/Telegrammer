@@ -59,6 +59,7 @@ class Message(ShallowDeleteModel):
         related_name="messages",
         related_query_name="message",
     )
+    error = models.TextField(null=True)
     """
     unsent_at, changed_at and other stuff can come later.
     """

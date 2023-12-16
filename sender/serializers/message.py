@@ -17,10 +17,12 @@ class MessageSerializer(serializers.ModelSerializer):
             'telegram_message_id',
             'project',
             'sender_bot',
+            'error',
         ]
         read_only_fields = [
             'sent_at',
             'telegram_message_id',
+            'error'
         ]
 
     def save(self, **kwargs):
