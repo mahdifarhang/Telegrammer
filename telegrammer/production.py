@@ -20,5 +20,6 @@ DATABASES = {
 	}
 }
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+# Uncommenting Bellow lines, makes error with admin panel login. saying: CSRF verification failed. Request aborted.
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True

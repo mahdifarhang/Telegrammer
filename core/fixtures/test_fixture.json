@@ -10,7 +10,7 @@
             "first_name": "",
             "last_name": "",
             "email": "",
-            "is_staff": false,
+            "is_staff": true,
             "is_active": true,
             "date_joined": "2023-12-04T15:57:27.034Z",
             "created_at": "2023-12-04T15:57:27.034Z",
@@ -243,6 +243,15 @@
             "created_at": "2023-12-04T16:17:01.148Z",
             "project": 1,
             "telegram_bot": 4
+        }
+    },
+    {
+        "model": "core.telegrambotprojectaccess",
+        "pk": 6,
+        "fields": {
+            "created_at": "2023-12-16T11:56:11Z",
+            "project": 2,
+            "telegram_bot": 6
         }
     }
 ]

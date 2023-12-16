@@ -1,0 +1,322 @@
+[
+    {
+        "model": "sender.message",
+        "pk": 1,
+        "fields": {
+            "created_at": "2023-12-12T23:53:49.085Z",
+            "updated_at": "2023-12-12T23:53:49.085Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 1,
+            "project": 1,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 2,
+        "fields": {
+            "created_at": "2023-12-16T11:56:44.243Z",
+            "updated_at": "2023-12-16T11:56:44.243Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 3,
+        "fields": {
+            "created_at": "2023-12-16T11:57:06.499Z",
+            "updated_at": "2023-12-16T11:57:06.500Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 4,
+        "fields": {
+            "created_at": "2023-12-16T12:00:07.526Z",
+            "updated_at": "2023-12-16T12:00:07.526Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 5,
+        "fields": {
+            "created_at": "2023-12-16T12:01:08.542Z",
+            "updated_at": "2023-12-16T12:01:08.542Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 6,
+        "fields": {
+            "created_at": "2023-12-16T12:02:26.936Z",
+            "updated_at": "2023-12-16T12:02:26.936Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 7,
+        "fields": {
+            "created_at": "2023-12-16T12:03:42.826Z",
+            "updated_at": "2023-12-16T12:03:42.827Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 8,
+        "fields": {
+            "created_at": "2023-12-16T12:10:53.109Z",
+            "updated_at": "2023-12-16T12:10:53.109Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 9,
+        "fields": {
+            "created_at": "2023-12-16T12:11:06.478Z",
+            "updated_at": "2023-12-16T12:11:06.479Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 10,
+        "fields": {
+            "created_at": "2023-12-16T12:16:08.210Z",
+            "updated_at": "2023-12-16T12:16:08.211Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 11,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": null
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 11,
+        "fields": {
+            "created_at": "2023-12-16T12:22:54.713Z",
+            "updated_at": "2023-12-16T12:23:05.154Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 31,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 12,
+        "fields": {
+            "created_at": "2023-12-16T12:24:51.381Z",
+            "updated_at": "2023-12-16T12:25:44.861Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 31,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 13,
+        "fields": {
+            "created_at": "2023-12-16T12:26:07.450Z",
+            "updated_at": "2023-12-16T12:27:00.184Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 31,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": "{\"ok\":false,\"error_code\":404,\"description\":\"Not Found\"}"
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 14,
+        "fields": {
+            "created_at": "2023-12-16T12:27:05.118Z",
+            "updated_at": "2023-12-16T12:27:31.142Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 31,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": "{\"ok\":false,\"error_code\":404,\"description\":\"Not Found\"}"
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 15,
+        "fields": {
+            "created_at": "2023-12-16T12:28:02.635Z",
+            "updated_at": "2023-12-16T12:28:06.814Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 31,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 5,
+            "project": 2,
+            "error": "{\"ok\":false,\"error_code\":404,\"description\":\"Not Found\"}"
+        }
+    },
+    {
+        "model": "sender.message",
+        "pk": 16,
+        "fields": {
+            "created_at": "2023-12-16T12:28:59.280Z",
+            "updated_at": "2023-12-16T12:29:52.677Z",
+            "created_by": null,
+            "updated_by": null,
+            "deleted_at": null,
+            "text": "Real Test Sening Telegram",
+            "status": 21,
+            "sent_at": null,
+            "receiver_id": "39995317",
+            "chat_id": "39995317",
+            "telegram_message_id": null,
+            "sender_bot": 6,
+            "project": 2,
+            "error": null
+        }
+    }
+]
