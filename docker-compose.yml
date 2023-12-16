@@ -60,3 +60,8 @@ services:
       PGTZ: 'Asia/Tehran'
       ## To go to psql cli, run `docker compose exec db bash` and
       ## run `psql --user telegrammer_database_user -d telegrammer_database` (\l - \q - \h will help you)
+  redis:
+    image: redis
+    restart: no
+    ports:
+     - "0.0.0.0:6375:6379"

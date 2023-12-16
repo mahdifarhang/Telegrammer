@@ -158,6 +158,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 	}
 # }
 
+
+# Celery Settings
+CELERY_BROKER_URL = "redis://127.0.0.1:6375"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6375"
+
 # Sending Telegram Request:
 TELEGRAM_BOT_API_BASE_URL = "https://api.telegram.org"
 
