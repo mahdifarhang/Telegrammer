@@ -7,6 +7,10 @@ ALLOWED_HOSTS += ['*']
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Celery Settings
+CELERY_BROKER_URL = "redis://127.0.0.1:6375"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6375"
+
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
