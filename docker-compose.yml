@@ -75,7 +75,9 @@ services:
     restart: no
     entrypoint: python -m celery -A telegrammer worker -l info
     environment:
-      SENTRY_ENVIRONMENT: celery-production
+      # ENTRYPINT_MODE: celery
+      # CELERY_PROJECT_NAME: telegrammer
+      # CELERY_LOG_LEVEL: info
       DJANGO_ENV: production
       DJANGO_SECRET_KEY: 'sp7x+9d6=i0)g5^ersgh&x5!t1*!f=6xypc$t5$(%d+n%wlz=s'
       DJANGO_DB_HOST: db
