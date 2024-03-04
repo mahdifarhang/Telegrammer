@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Docker/Dockerfile
     restart: no
-    # entrypoint: python3 manage.py runserver 0.0.0.0:8000
+    # entrypoint: python3 manage.py runserver 127.0.0.1:8000
     environment:
       DJANGO_ENV: production
       DJANGO_SECRET_KEY: 'sp7x+9d6=i0)g5^ersgh&x5!t1*!f=6xypc$t5$(%d+n%wlz=s'
@@ -39,7 +39,7 @@ services:
       - ./staticfiles/:/code/staticfiles/:Z
       - ./media/:/code/media/:Z
     ports:
-      - "0.0.0.0:8000:8000"
+      - "127.0.0.1:8000:8000"
     depends_on:
       - db
       - redis
@@ -49,7 +49,7 @@ services:
     restart: unless-stopped
     ## Allow access from Development machine
     ports:
-      - "0.0.0.0:5432:5432"
+      - "127.0.0.1:5429:5432"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./db:/var/lib/postgresql/data
@@ -66,14 +66,14 @@ services:
     image: redis
     restart: no
     ports:
-     - "0.0.0.0:6379:6379"
+     - "127.0.0.1:6375:6379"
 
   celery:
     build:
       context: .
       dockerfile: Docker/Dockerfile
     restart: no
-    entrypoint: python -m celery -A telegrammer worker -l info
+    entrypoint: python -m celery -A telegrammer worker -l warning
     environment:
       # ENTRYPINT_MODE: celery
       # CELERY_PROJECT_NAME: telegrammer
