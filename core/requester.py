@@ -17,14 +17,18 @@ class APIRequester(object):
         >>> response = api_request('POST', '/login', data={'username': 'foo', 'password': 'bar'})
     etc.
     """
-    base_url = getattr(settings, 'TELEGRAM_BOT_API_BASE_URL', 'https://api.telegram.org')
 
-    def __init__(self, base_url=None, headers=None, json_response=True):
+    base_url = getattr(settings, 'TELEGRAM_BOT_API_BASE_URL', 'https://api.telegram.org')
+    timeout = 3.0
+
+    def __init__(self, base_url=None, headers=None, json_response=True, timeout=None):
         self.json_response = json_response
         if base_url is not None:
             self.base_url = base_url
         if not self.base_url.endswith('/'):
             self.base_url += '/'
+        if timeout is not None:
+            self.timeout = timeout
         if headers is not None:
             self.headers = headers
         else:
@@ -48,7 +52,7 @@ class APIRequester(object):
         headers = kwargs.pop('headers', {})
         self.headers.update(headers)
 
-        response = requests.request(method=method, url=self.url, headers=headers, **kwargs)
+        response = requests.request(method=method, url=self.url, headers=headers, timeout=self.timeout, **kwargs)
         if response.status_code // 100 == 2:
             if self.json_response:
                 return json.loads(response.text)

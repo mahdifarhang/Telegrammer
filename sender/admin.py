@@ -8,12 +8,11 @@ from sender.models import Message
 class MessageAdmin(ShallowDeleteAdminModel):
     list_display = [
         'id',
-        'text',
         'status',
-        'sent_at',
-        'receiver_id',
+        'enable_notification',
+        'parse_mode',
         'chat_id',
-        'telegram_message_id',
         'project',
+        'telegram_message_id',
         'sender_bot',
     ]

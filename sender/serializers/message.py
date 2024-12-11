@@ -15,6 +15,8 @@ class MessageSerializer(serializers.ModelSerializer):
             'receiver_id',
             'chat_id',
             'telegram_message_id',
+            "parse_mode",
+            "enable_notification",
             'project',
             'sender_bot',
             'error',

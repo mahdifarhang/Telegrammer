@@ -19,11 +19,19 @@ class MessageManager(ShallowDeleteModelManager):
     pass
 
 
+class MessageParseMode(models.IntegerChoices):
+    NORMAL = 1, "Normal"
+    MARKDOWN = 2, "MarkdownV2"
+    HTML = 3, "HTML"
+
+
 class Message(ShallowDeleteModel):
     class StatusChoices(models.IntegerChoices):
         SENDING = 11, _("Sending")
         SENT = 21, _("Sent")
         FAILED = 31, _("Failed")
+
+    ParseMode = MessageParseMode
 
     text = models.TextField()
     status = models.PositiveSmallIntegerField(
@@ -60,10 +68,14 @@ class Message(ShallowDeleteModel):
         related_query_name="message",
     )
     error = models.TextField(null=True)
-    """
-    unsent_at, changed_at and other stuff can come later.
-    """
-    
+    parse_mode = models.PositiveSmallIntegerField(
+        choices=MessageParseMode.choices,
+        default=MessageParseMode.NORMAL,
+        null=False,
+        blank=False,
+    )
+    enable_notification = models.BooleanField(default=True)
+
     objects = MessageManager()
     all_objects = MessageAllManager()
 
@@ -86,4 +98,3 @@ class Message(ShallowDeleteModel):
         }
         object = serializer.save(**extra_content)
         send_telegram_message.delay(object.id)
-
