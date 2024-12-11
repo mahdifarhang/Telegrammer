@@ -5,6 +5,8 @@ from sender.models import Message
 
 class MessageSerializer(serializers.ModelSerializer):
     status = serializers.CharField(read_only=True, required=False, source='get_status_display')
+    enable_notification = serializers.CharField(required=False)
+    parse_mode = serializers.CharField(required=False)
     class Meta:
         model = Message
         fields = [
