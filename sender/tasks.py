@@ -31,7 +31,7 @@ def send_telegram_message(message_id):
     if response.get('ok'):
         message.status = Message.StatusChoices.SENT
         result = response.get('result')
-        if result:
+        if result and not Message.objects.filter(message_id=result.get("message_id")).exists():
             message.telegram_message_id = result.get('message_id')
         message.save()
     else:
